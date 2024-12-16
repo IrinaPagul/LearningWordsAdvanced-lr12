@@ -204,5 +204,5 @@ input[type="radio"]:checked + span {
    #falseSum{ left:82%;top:80%;}
    .radio-label span { font-size: 0.7em;}
    .card{width:49%;}
-   #title,.radio-label{left:0%;}
+   #title,.radio-label{left:0%;top:0%;}
 }

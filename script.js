@@ -98,7 +98,6 @@ const wordsBeginner = new Map([
     isFlipped = !isFlipped;
   }
   function CheckButton() {
-    // Кнопка заблокована, якщо слово не введено або картка перевернута
     const wordText = $('#word').val().trim();
     $('#checkBtn').prop('disabled', isFlipped || wordText === '');
   }
@@ -106,19 +105,17 @@ const wordsBeginner = new Map([
   function Choose() {
     $('.card-front').removeClass('correct incorrect');
   
-    // Якщо слова закінчилися
     if (keysEN.length === 0) {
       alert('Слова закінчилися! Натисніть стрілку, щоб перейти далі.');
       return;
     }
   
-    // Вибір випадкового слова
     const randomKey = keysEN[Math.floor(Math.random() * keysEN.length)];
     wordEN = wordsEN.get(randomKey);
     wordUA = wordsUA.get(randomKey);
     $('#wordEN').text(wordEN);
     $('#wordUA').text('');
-    keysEN = keysEN.filter(key => key !== randomKey); // Видалення ключа з масиву
+    keysEN = keysEN.filter(key => key !== randomKey); 
   }
   
   function Check(wordText) {
@@ -140,7 +137,6 @@ const wordsBeginner = new Map([
     $('input[type="radio"]').change(function () {
       const selectedValue = $(this).val();
   
-      // Вибираємо правильну карту залежно від вибору
       if (selectedValue === 'beginner') {
         currentMap = wordsBeginner;
       } else if (selectedValue === 'middle') {
@@ -149,16 +145,13 @@ const wordsBeginner = new Map([
         currentMap = wordsProfi;
       }
   
-      // Ініціалізуємо змінні для слів
       const lang = Array.from(currentMap.keys());
       wordsEN = currentMap.get(lang[0]);
       wordsUA = currentMap.get(lang[1]);
       keysEN = Array.from(wordsEN.keys());
   
-      // Блокуємо вибір
       $('input[type="radio"]').prop('disabled', true);
   
-      // Починаємо гру
       wordNum = 1;
       correctAnswr = 0;
       wrongAnswr = 0;
@@ -168,7 +161,6 @@ const wordsBeginner = new Map([
       Choose();
       CheckButton();
   
-      // Очищення поля вводу
       $('#word').val('').off('input').on('input', CheckButton);
     });
     $('#checkBtn').off('click').click(function () {
@@ -198,7 +190,6 @@ const wordsBeginner = new Map([
           } else if (correctAnswr === 10) {
             alert('МОЖНА ЇХАТИ В БРИТАНІЮ!');
           }
-          // Блокування кнопки після завершення
           $(this).prop('disabl;ed', true);
         }
       });

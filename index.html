@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lr11</title>
+<link rel="stylesheet" href="style.css" >
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class = "box">
+    <div class = "card" id = "card">
+      <div class = "card-front">
+        <p id = "wordEN"></p>
+      </div>
+      <div class = "card-back">
+        <p id = "wordUA"></p>
+      </div>
+    </div>
+    <h3 id = "title">Рівень складності:</h2>
+    <form class="form-container">
+        <label class="radio-label">
+        <input type="radio" id="beginner" name="language_level" value="beginner">
+        <span>Початковий</span>
+        </label>
+        <label class="radio-label">
+        <input type="radio" id="middle" name="language_level" value="middle">
+        <span>Середній</span>
+        </label>
+        <label class="radio-label">
+        <input type="radio" id="profi" name="language_level" value="profi">
+        <span>Високий</span>
+        </label>
+    </form>
+    <h2 id = "trueSum">0</h2>
+    <h2 id = "falseSum">0</h2>
+    <input type = "text" id = "word" placeholder="Введіть переклад">
+    <button id = "rightArrow">⮕</button>
+    <h2 id = "wordNum">0/10</h2>
+    <button id = "checkBtn">Перевірити</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
